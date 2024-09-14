@@ -27,7 +27,7 @@ git push origin main
 If you want to push to a different branch, specify the branch name after origin.
 
 For modified changes, remember to stage the file changes using:
-use "git add <file_name>"
+git add <file_name>
 Then commit the changes.
 
 To set the access token for pushing code to GitHub, use:
