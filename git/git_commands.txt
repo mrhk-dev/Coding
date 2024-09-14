@@ -1,10 +1,36 @@
-git clone "repo-url" 
-clone any repo in current folder
-	ex: git clone https://github.com/mrhk-dev/Coding/git
-	
-git status
-to view the current repo status
+git config --global user.name "username"
+git config --global user.email "username@gmail.com"
+use above commands to set user-name and email for the git, these are for idententifing the changes commited on github
 
+To edit your user name or email later, use:
+git config --global --edit
+This command opens the global Git configuration file in your default text editor.
+
+To clone a repository into the current folder, use:
+git clone "repo-url" 
+	For example, replace <repository-url> with an actual URL like https://github.com/mrhk-dev/Coding.git.
+	
+To view the current repository status, run:
+git status
+
+To add a new file to Git, use:
 git add <file_name>
-to add the new file to the git 
-	ex: git add intro_to_git
+	For example, to add a file named intro_to_git, you would run:
+		git add intro_to_git
+
+To commit the changes to your local Git repository, use:
+git commit -m "write the comment here"
+Ensure your commit messages are descriptive.
+
+To push the committed changes to the main branch of the repository, use:
+git push origin main
+If you want to push to a different branch, specify the branch name after origin.
+
+For modified changes, remember to stage the file changes using:
+use "git add <file_name>"
+Then commit the changes.
+
+To set the access token for pushing code to GitHub, use:
+git  https://your_access_token@github.com/username/repository-name.git
+This is necessary for authenticating when pushing to private repositories or using HTTPS.
+
