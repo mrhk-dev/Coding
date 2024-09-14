@@ -30,7 +30,14 @@ For modified changes, remember to stage the file changes using:
 git add <file_name>
 Then commit the changes.
 
+To add all the modified files to the git, use:
+git add .
+Alternative commands:
+git add --add 
+git add -A
+
 To set the access token for pushing code to GitHub, use:
 git  https://your_access_token@github.com/username/repository-name.git
 This is necessary for authenticating when pushing to private repositories or using HTTPS.
+
 
