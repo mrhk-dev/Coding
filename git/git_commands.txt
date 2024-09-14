@@ -1,0 +1,10 @@
+git clone "repo-url" 
+clone any repo in current folder
+	ex: git clone https://github.com/mrhk-dev/Coding/git
+	
+git status
+to view the current repo status
+
+git add <file_name>
+to add the new file to the git 
+	ex: git add intro_to_git
