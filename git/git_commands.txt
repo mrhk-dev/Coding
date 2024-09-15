@@ -41,9 +41,21 @@ and add the folders as foldername/
 for file add filename
 	ex: testing_gitignore/
 		text.txt
+		
+To create a branch:
+git branch branchname
+	
+	
+To change the branch:
+git checkout branchname
+
 
 To set the access token for pushing code to GitHub, use:
-git  https://your_access_token@github.com/username/repository-name.git
+git remote https://your_access_token@github.com/username/repository-name.git
 This is necessary for authenticating when pushing to private repositories or using HTTPS.
+
+to view the current git remotes for fetch and push:
+git remote -v
+
 
 
