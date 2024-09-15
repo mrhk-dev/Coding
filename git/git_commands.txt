@@ -69,4 +69,7 @@ To check the logs:
 git log
 
 To update the branch with the origin:
-
+1: fetch the changes with "git fetch origin"
+2: merge changes with "git merge origin/<brnach_name>"
+Note to fetch and merge in single command:
+git pull origin <branch_name>
