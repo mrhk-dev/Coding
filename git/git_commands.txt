@@ -36,6 +36,12 @@ Alternative commands:
 git add --add 
 git add -A
 
+To add files/folders to be ignored for commit, first create a file .gitignore
+and add the folders as foldername/
+for file add filename
+	ex: testing_gitignore/
+		text.txt
+
 To set the access token for pushing code to GitHub, use:
 git  https://your_access_token@github.com/username/repository-name.git
 This is necessary for authenticating when pushing to private repositories or using HTTPS.
