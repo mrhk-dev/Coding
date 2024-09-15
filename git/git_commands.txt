@@ -23,7 +23,7 @@ git commit -m "write the comment here"
 Ensure your commit messages are descriptive.
 
 To push the committed changes to the main branch of the repository, use:
-git push origin main
+git push origin branchname
 If you want to push to a different branch, specify the branch name after origin.
 
 For modified changes, remember to stage the file changes using:
@@ -41,14 +41,20 @@ and add the folders as foldername/
 for file add filename
 	ex: testing_gitignore/
 		text.txt
+
+To check the current branch:
+git branch
+This display the current selected branch with *
 		
 To create a branch:
 git branch branchname
 	
-	
 To change the branch:
 git checkout branchname
 
+To merge branches, first checkout into main/master
+git merge branchname
+then push to the main/master
 
 To set the access token for pushing code to GitHub, use:
 git remote https://your_access_token@github.com/username/repository-name.git
@@ -57,5 +63,6 @@ This is necessary for authenticating when pushing to private repositories or usi
 to view the current git remotes for fetch and push:
 git remote -v
 
-
+To check the logs:
+git log
 
