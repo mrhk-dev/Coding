@@ -44,6 +44,9 @@ for file add filename
 
 To check the current branch:
 git branch
+This display the current selected branch with *
+	ex: *main
+	     develop
 		
 To create a branch:
 git branch branchname
@@ -62,4 +65,11 @@ This is necessary for authenticating when pushing to private repositories or usi
 to view the current git remotes for fetch and push:
 git remote -v
 
+To check the logs:
+git log
 
+To update the branch with the origin:
+1: fetch the changes with "git fetch origin"
+2: merge changes with "git merge origin/<brnach_name>"
+Note to fetch and merge in single command:
+git pull origin <branch_name>
