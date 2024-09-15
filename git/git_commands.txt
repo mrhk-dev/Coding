@@ -45,6 +45,8 @@ for file add filename
 To check the current branch:
 git branch
 This display the current selected branch with *
+	ex: *main
+	     develop
 		
 To create a branch:
 git branch branchname
