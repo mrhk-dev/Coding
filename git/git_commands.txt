@@ -41,6 +41,9 @@ and add the folders as foldername/
 for file add filename
 	ex: testing_gitignore/
 		text.txt
+
+To check the current branch:
+git branch
 		
 To create a branch:
 git branch branchname
