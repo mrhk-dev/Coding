@@ -1,0 +1,77 @@
+This is vim command file with command descriptions:
+
+There are two modes in vim Insert & Normal
+
+Insert mode: used for writing text in the file
+Normal mode: used for appling commands.
+
+to change modes use exc & i.
+ex: enter insert mode with i key.
+	exit insert mode with exc key
+
+h,j,k,l used for navigating 
+----------------------------------------------------------------
+j -> moving cursor down
+k -> moving cursor up
+l -> moving cursor right
+h -> moving cursor left
+
+word navigation
+-----------------------------------------------------------------
+w -> navigate cursor to start of next word
+e -> navigate cursor to end of current word
+b -> move cursor to start of the current word or last word start
+
+combine numbers with word navigations
+ex: 3w -> moves cursor to 3rd word 1st letter
+	2b -> moves cursor to 1st letter of last 2 words
+
+---------------------------------------------------------------
+insert any word 3 times 
+
+----------------------------------------------------------------
+f and F to find the character
+ex: fo in normal mode finds the next occurance of o
+
+combine the number with f 
+ex: 2fo -> finds the 2nd o
+
+---------------------------------------------------------------
+to find the special character use Shift 5(%) and press character like (,{,[ 
+to got to the special character in the line use shift $
+---------------------------------------------------------------
+to reach the begning of the line press 0(num)
+---------------------------------------------------------------
+find the next occurence of the currnt cursor word with *
+---------------------------------------------------------------
+gg to start of the file and G to end of the file
+---------------------------------------------------------------
+go to line of the file with line number and g or G
+---------------------------------------------------------------
+to find the word use / and word
+to find the next occurance of same word use n and N(back)
+---------------------------------------------------------------
+to insert into next line use o and O -> it inserts the new line and moves to the new line
+O to insert new line above the cursor
+---------------------------------------------------------------
+to remove the character use x and X(similar to delete)
+---------------------------------------------------------------
+replace the character with r
+---------------------------------------------------------------
+d to delete character
+dw to delete the word
+d is also to copy content and use p to paste
+to delete 2 words use d2e
+---------------------------------------------------------------
+to repeate the command use dot(.)
+---------------------------------------------------------------
+visual mode to select word press v
+v to enter visual mode 
+--------------------------------------------------------------
+:set number
+to view the line numbers
+--------------------------------------------------------------
+:q to quit vim 
+--------------------------------------------------------------
+:w to save the file
+
