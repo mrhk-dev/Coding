@@ -1,1 +1,65 @@
 This is a devops text file.
+
+What is Devops?
+
+Roles of Devops?
+
+Why Devops?
+DevOps is a software development practice that combines the words "development" and "operations" to describe a culture that emphasizes collaboration, automation, and continuous improvement. 
+
+Azure Devops:
+Collaborate on software development through source control, work tracking, and continuousintegration and delivery, both on-premises and in the cloud!
+
+What is agile and how is it related to devops?
+
+Which Softwares can track work?
+Jira
+Rally
+Azure DevOps
+
+We also need
+CI/CD Engines
+Test Management
+Artifact Management
+Document Repository
+Version control system
+
+A software which gives all of below is called as ALM (Application Lifecycle Managment)
+Agile Management
+CI/CD Engines
+Test Management
+Artifact Management
+Document Repository
+Version control system
+
+JIRA from Attlassian and Azure DevOps are popular tools in this area
+
+
+What are CI/CD pipeline?
+
+
+
+
+How PipeLine works?
+They work on Agents
+
+What are Agents?
+These are systems on which pipeline executes.
+There are 4 options
+
+MS hosted Agents
+Self hosted Agents
+Virtual Machine agents
+Containers
+
+
+We write the pipeline in Yaml file.
+refer here for the pipeline schema: https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/?view=azure-pipelines
+
+Pipeline may have stages or jobs or steps
+stages: coleection of jobs
+jobs: collection of steps
+steps: its actual work
+
+
+
