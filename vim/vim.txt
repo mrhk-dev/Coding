@@ -40,7 +40,7 @@ ex: 2fo -> finds the 2nd o
 to find the special character use Shift 5(%) and press character like (,{,[ 
 to got to the special character in the line use shift $
 ---------------------------------------------------------------
-to reach the begning of the line press 0(num)
+to reach the begning of the line press 0(num), $ for end of the line 
 ---------------------------------------------------------------
 find the next occurence of the currnt cursor word with *
 ---------------------------------------------------------------
