@@ -1,0 +1,102 @@
+What is Teraform?
+    Teraform is an open-source infrastructure as code (IaC) software tool created by HashiCorp. 
+    It allows users to define and provision infrastructure resources in a declarative configuration language called HashiCorp Configuration Language (HCL).
+    teraform makes sure to have the actual state based on desired state
+
+Why teraform?
+    teraform is a popular infrastructure as code (IaC) tool that provides several benefits for managing cloud and on-premises resources:
+
+* Multi-Cloud Compatibility
+  teraform supports over 100 providers including AWS, Azure, Google Cloud, Kubernetes, and more.
+    This allows managing infrastructure across multiple cloud providers using the same syntax
+  
+* Infrastructure as Code
+    teraform uses a declarative configuration language called HashiCorp Configuration Language (HCL) to define infrastructure resources in human-readable files that can be versioned, shared, and reused.
+
+* Automation and Efficiency
+    teraform handles the underlying logic when creating resources, eliminating the need for manual effort. 
+    It determines resource dependencies and can create or modify non-dependent resources in parallel, ensuring resources are provisioned properly and efficiently.
+
+* Collaboration and Consistency
+    teraform configuration files can be committed to version control systems, enabling collaboration and preventing unauthorized changes. 
+    Using modules, teams can define and share approved infrastructure patterns for consistency across environments
+    
+* Tracking and Visibility
+    teraform configuration files can be committed to version control systems, enabling collaboration and preventing unauthorized changes. 
+    Using modules, teams can define and share approved infrastructure patterns for consistency across environments
+
+* Flexibility and Portability
+    teraform's declarative syntax and modular architecture provide flexibility in configuration and deployment. 
+    The ability to manage resources across cloud and on-premises environments offers portability
+
+teraform vs OpenTofu:
+    teraform and OpenTofu are both infrastructure as code (IaC) tools designed for managing cloud resources, but they have distinct characteristics and licensing models that set them apart. 
+
+How teraform is different from cicd pipeline?
+    teraform and CI/CD (Continuous Integration/Continuous Deployment) pipelines serve different but complementary roles in the software development and infrastructure management lifecycle.
+    Here’s a detailed comparison highlighting their differences:
+        * teraform:
+            teraform is an infrastructure as code (IaC) tool that allows users to define and provision cloud infrastructure using a declarative configuration language (HCL). 
+            Its primary purpose is to automate the creation, modification, and management of infrastructure resources across various cloud providers.
+        * CI/CD Pipeline:
+            A CI/CD pipeline is a set of automated processes that allow for continuous integration of code changes and continuous deployment of applications. 
+            It focuses on automating the software delivery process, including building, testing, and deploying applications to various environments.
+
+What is Infra provisioning?
+    The process of creating infrastructure by experessing our infra needs in a declarative way and then executing the template to create infra sturcture(virtual).
+        ex: I want a linux vm with 2 cpus and 8gb ram
+
+What is infrastructure?
+    Infrastructure refers to the foundational components and resources that are necessary to run applications and services. 
+    This includes both low-level resources, such as servers and storage, and high-level components, such as networking configurations and DNS entries. 
+    teraform enables users to define, provision, and manage these resources through a declarative configuration language called HashiCorp Configuration Language (HCL).
+
+Procedural:
+manually installing.
+
+Infrastructure as code:
+    Infrastructure as a code (IAC) is a concept where you express your infrasturcture in a declarative way.
+	    We need to express
+	    What we want to create/manage (Resource)
+	    Outputs	
+
+Teraform components:
+    Inputs:Arguments
+    Outputs:attributes
+    Providers: where to create
+    Resource: what to create
+
+What are teraform provider?
+
+How teraform works:
+    teraform can interact with specific providers (AWS, Azure, Vmware) to create/manage infrastructure 
+    Each Provider will have lots of resources which we can define to create infra.
+
+Executing teraform:
+    teraform --help
+    teraform init
+    teraform apply
+    teraform delete
+
+Template:
+    In teraform we need to express infrastucture in a declartive fashion and what we create is called as template.
+    teraform takes a folder as input considering all .tf files a folder
+
+teraform installation:
+
+
+teraform Workflow:
+    Create a new folder for every infra
+    we will be adding .tf files
+    initialize teraform
+    validate teraform
+    format teraform
+    apply
+    destroy    
+
+
+teraform commands:
+    teraform init:
+    teraform validate:
+    teraform fmt:
+    teraform aplly:
