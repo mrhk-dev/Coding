@@ -100,3 +100,21 @@ teraform commands:
     teraform validate:
     teraform fmt:
     teraform aplly:
+
+
+Terraform Ways of Working:
+	Ensure you know how to manually create resources
+	List out all the resources and ensure you have creation order
+	For each resource, list all the inputs you are passing
+	For each resource you have created manually, find the equivelent terraform resource.
+
+Resource Blocks:
+Resources are the most important element in the Terraform language. 
+Each resource block describes one or more infrastructure objects, such as virtual networks, compute instances, or higher-level components such as DNS records.
+
+Resource Syntax:
+ex:
+	resource "aws_instance" "web" {
+  		ami           = "ami-a1b2c3d4"
+  		instance_type = "t2.micro"
+	}
