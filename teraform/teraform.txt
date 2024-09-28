@@ -51,8 +51,8 @@ What is infrastructure?
     This includes both low-level resources, such as servers and storage, and high-level components, such as networking configurations and DNS entries. 
     teraform enables users to define, provision, and manage these resources through a declarative configuration language called HashiCorp Configuration Language (HCL).
 
-Procedural:
-manually installing.
+What is Procedural provisioning?
+	manually installing.
 
 Infrastructure as code:
     Infrastructure as a code (IAC) is a concept where you express your infrasturcture in a declarative way.
@@ -118,3 +118,174 @@ ex:
   		ami           = "ami-a1b2c3d4"
   		instance_type = "t2.micro"
 	}
+
+Using teraform Attributes:
+ex:
+	resource "aws_vpc" "base" {
+		cidr_block = var.vpc_config.cidr_block
+  		tags       = var.vpc_config.tags
+	}
+
+	resource "aws_subnet" "subnets" {
+  		count             = length(var.subnets_config)
+  		availability_zone = var.subnets_config[count.index].availability_zone
+  		vpc_id            = aws_vpc.base.id
+  		cidr_block        = var.subnets_config[count.index].cidr_block
+  		tags              = var.subnets_config[count.index].tags
+	}
+
+from the above exeamble the resource aws_subnet is dependent on aws_vpc
+we defined its dependency in vpc_id
+here the awc_vpc is type and base is resource name and id is the variable
+
+We can also add the depends_on variable as well.
+ex: 
+	resource "aws_vpc" "base" {
+		cidr_block = var.vpc_config.cidr_block
+		tags       = var.vpc_config.tags
+	}
+
+	resource "aws_subnet" "subnets" {
+		count             = length(var.subnets_config)
+		availability_zone = var.subnets_config[count.index].availability_zone
+		vpc_id            = aws_vpc.base.id
+		cidr_block        = var.subnets_config[count.index].cidr_block
+		tags              = var.subnets_config[count.index].tags
+		depends_on = [
+			aws_vpc.base
+		]
+	}
+
+So in the above example vpc_id of vpc is the attribute
+
+In Azure we first create the resource then network then subnet.
+---------------------------------------------------------------------------------------
+
+Now we can create the variable template 
+We generally try to store all the variables in "variable.tf" or "inputs.tf"
+variable syntax:
+variable "<variable_name>" {
+    type =  string | number | bool | map | object | list
+    description = 
+    default = 
+}
+
+
+If we do not provide the default variable, it will then ask for the value.
+
+So we try to make the template generic.
+for this we use count for creating multiple subnets.
+
+variable.tf
+variable "aws_vpc_resource name"{
+	type = string
+	default = "aws_vpc"
+}
+main.tf
+ex: resource "aws_vpc_subnet" "subnet"{
+	count = 4
+	address_prefex = var.subnet[count.index] #this is just for example
+}
+
+
+use of object in variable
+ex:
+	variable "vpcinfo"{
+		type = object({
+			cidr_block = string
+			tag = map(string)
+		})
+		default = {
+			cidr_block = ""
+			tag = {
+				// provide required tags of choice
+			}
+		}
+	}
+
+
+Now how to pass these all the variable?
+option 1: teraform apply -var varname = "variable valiues" etc
+option 2: teraform apply -var-file = 'dev.tfvars'
+
+in option 2 we pass all the values of the variables in a file called dev.tfvar, we can change the file name accordingly
+
+----------------------------------------------------------------------------
+Teraform Functions:
+
+We can use terraform console to view the functions
+There are various builin functions.
+
+Now we can replace the count value with lenght(var.varname)
+
+----------------------------------------------------------------------------
+Aws Ntier Architucture:
+
+
+
+----------------------------------------------------------------------------
+Terraform conditions:
+
+Teraform local:
+to use the local conditions multiple time we can create a local file
+and pass the data inside the local block
+ex:
+	locals{
+		do_we_have_to_create = lenght(var.varname) > 0 ? 1 : 0
+	}
+
+refer with local.do_we...
+
+----------------------------------------------------------------------------
+Teraform state management:
+
+Terafrom has plan, which compares the difference in states.
+These state file will have all the information about the current resource state.
+You should never be editing this state file and shouldnt exit in the local system as well.
+
+
+----------------------------------------------------------------------------
+Teraform resource importing:
+
+If the resource was created manually, and now if we want to manage them in teraform how do we do that.
+First create the provider file with provider.tf
+then in main.tf write the following code:
+
+`terraform import aws_vpc.base "vpc_id"`
+the base is name that we are providing for managinf in teraform.
+The vpc_id is provided from the resource or the vpc created manually.
+
+then if it asks to create resource block with "aws_vpc" "base", then create it
+we can then reenter the above command of `terraform import aws_vpc.base "vpc_id"`
+then execute "terraform plan" this is to let the terraform know that these resources shouldnt be created.
+
+We can then execute the terraform state aws_vpc.base to show the current state of the resource.
+We can then validate the file with "terraform validate"
+Then execute "teraform plan", this should not show that it is going to create the resource.
+
+----------------------------------------------------------------------------
+Teraform Workspace:
+
+We know that two developers can not write into the file due to lock mechanism for preventing crashes.
+But we want dev and qa to execute the file parallely.
+This can be done by creating two workspaces, meanning by creating the storage on the cloud and providing the storage path.
+As the most important file in terraform is state file, this keeps the record of the environment and all.
+Refer here for more info: https://developer.hashicorp.com/terraform/language/state/workspaces
+
+You can vew the current workspaces with "Terraform workspace list"
+But this will only work if the backend is selected.
+
+We can select the workspace with "Terraform workspace select workspace_name"
+----------------------------------------------------------------------------
+Terraform provisioning:
+
+
+=========================================================================================
+How Organisations use teraform:
+
+Terraform best practices:
+choose google terraform starnd module structure.
+
+
+
+
