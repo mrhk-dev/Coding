@@ -1,0 +1,14 @@
+This file is created to write the command according to usage instead of all the commands.
+
+i			=> enter editable mode, by default it is in command mode.
+:w  		=> save the changes made in the file.
+:q! 		=> quit vim
+
+Navigation:
+gg			=> go to start of the file
+Shift + g 	=> move to last line of the file
+
+0 or I		=> move to first character of the line
+g_ or $		=> move to last character of the line
+
+
