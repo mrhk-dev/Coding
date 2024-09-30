@@ -266,6 +266,7 @@ Then execute "teraform plan", this should not show that it is going to create th
 ----------------------------------------------------------------------------
 Teraform Workspace:
 
+Workspaces are isolated environments within a single Terraform configuration that allow you to manage multiple instances of the same infrastructure. Each workspace has its own state file, enabling separate management of resources.
 We know that two developers can not write into the file due to lock mechanism for preventing crashes.
 But we want dev and qa to execute the file parallely.
 This can be done by creating two workspaces, meanning by creating the storage on the cloud and providing the storage path.
@@ -286,6 +287,25 @@ How Organisations use teraform:
 Terraform best practices:
 choose google terraform starnd module structure.
 
+organisation mostly uses teraform modules.
+
+Then after creating the ec3 instance if we want to install any softwares using scripts while creating ec2 we use null_resouce
+
+The null_resouce can be used to execute multiple scripts and also get them changed after ec2 is created.
+
+----------------------------------------------------------------------------
+Terrascan:
+
+This is used to scan for vunerabilities in the terraform 
+
+we only need to execute one cammand "terascan scan"
 
 
+
+
+
+===================================================================================================
+
+null_block for running bash commands:
+This is to make changes to the softwares if are provided at the time of infra building.
 
