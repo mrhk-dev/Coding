@@ -134,7 +134,7 @@ ex:
   		tags              = var.subnets_config[count.index].tags
 	}
 
-from the above exeamble the resource aws_subnet is dependent on aws_vpc
+from the above example the resource aws_subnet ubnet is dependent on aws_vpc
 we defined its dependency in vpc_id
 here the awc_vpc is type and base is resource name and id is the variable
 
@@ -240,7 +240,7 @@ refer with local.do_we...
 Teraform state management:
 
 Terafrom has plan, which compares the difference in states.
-These state file will have all the information about the current resource state.
+The state file will have all the information about the current resource state.
 You should never be editing this state file and shouldnt exit in the local system as well.
 
 
