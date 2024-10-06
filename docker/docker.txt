@@ -78,6 +78,24 @@ There are two ways to create the docker image:
 	* Manual Steps
 	* Docker file
 
+Manual steps:
+	These refer to installing the softwares and running the application or website maually
+	ex: to run a website we need the nginx.
+	
+1) Docker steps:
+	For running a website we will first install the nginx and then the website into nginx folder
+	install Docker image that has nginx.
+		ex: docker pull ngins:1.27
+		We can then run the docker container from this image
+		"docker container run -d -P --name nginx-manual nginx:1.27"
+		
+Docker file:
+
+
+After writing the file
+	* execute the command to create the continer from image
+		: docker image build -t auto:1.0 .
+		. refers to the current folder location.
 
 
 
