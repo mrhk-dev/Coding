@@ -142,9 +142,14 @@ steps:
   - bash: give first bash command
   - bash: second command etc
 
-Azure Devops Tasks:
-	A task in Azure DevOps is a packaged script or procedure that performs a specific action in a pipeline. 
-	Tasks are the building blocks for automating processes within CI/CD pipelines.
+Azure Devops Tasks: 
+	A task performs an action in a pipeline. 
+	For example, a task can build an app, interact with Azure resources, install a tool, or run a test. 
+	Tasks are the building blocks for defining automation in a pipeline.
+
+Tasks vs steps:
+	A task is a predefined action that performs a specific function in the pipeline, such as building code, running tests, or deploying applications.
+	A step is the smallest building block of a pipeline and can consist of either a task or a script.
 
 
 
