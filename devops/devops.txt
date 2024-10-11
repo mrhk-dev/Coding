@@ -152,7 +152,17 @@ Tasks vs steps:
 	A step is the smallest building block of a pipeline and can consist of either a task or a script.
 
 
+Triggers:
+execute the pipeline when there is a trigger 
+types: 
+	git pull
+	Schedule
 
+
+Azure Parameters
+Azure Variables
+
+Variable Groups
 
 
 
