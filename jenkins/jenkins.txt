@@ -1,0 +1,5 @@
+Installing jenkins:
+
+After installing jenkis, it automatically creates the user called jenkins with bash terminal.
+
+
