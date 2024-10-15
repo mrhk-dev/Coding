@@ -1,5 +1,52 @@
 Installing jenkins:
 
-After installing jenkis, it automatically creates the user called jenkins with bash terminal.
+After installing jenkis, it automatically creates the user called jenkins with bash terminal
+
+What is jenkins?
+Jenkins is an open-source automation server that automates tasks related to building, testing, and deploying softwares.
+
+PreRequisites of Jenkins?
+needs to have the "open jdk 17"
+
+Installation guide:
+Refer here: https://www.jenkins.io/doc/book/installing/
+
+check the status of jenkins with "sudo systemctl status jenkins"
+
+Accessing jenkins:
+on the browser use url http://localhost:8080
+for the first time this will prompt for the admin password
+
+User in Jenkins:
+after the admin password is set, jenkins will ask for the user creation.
+we will further be accessing the jenkins with this user, so store it at some place.
+
+Jenkins Dashboard:
+* New Items
+* Build History
+* Manage Jenkins
+
+Creating pipline:
+Types of Creating pipeline:
+	* FreeStyle Project
+	
+
+### FreeStyle Project
+	This is a way for creating the pipeline with GUI
+	
+Configrations in pipeline:
+	* General
+	* Source Code management
+    * Build Triggers
+    * Build Environment
+    * Build Steps
+    * Post-build Actions
+
+General: 
+
+
+Pipeline Management:
+After the pipeline is created we can build the pipeline with build now opetion.
+
 
 
