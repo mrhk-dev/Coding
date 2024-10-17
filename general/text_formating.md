@@ -73,7 +73,7 @@ Provide the image reference with the following format:
 # Code Blocks:
 Add 8 spaces or 2 tabs for code indentation.
 
-
+# Horizontal Rule:
 ---
 
 
