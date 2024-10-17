@@ -65,6 +65,6 @@ Add - to have Dot at the front
 
 # Image Reference:
 to provide the image reference use the following format
-    ![Refer Here](/images/1.jpg)
+    ![Refer Here](./images/1.jpg)
 
 
