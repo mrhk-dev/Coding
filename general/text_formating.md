@@ -63,6 +63,8 @@ Add - to have Dot at the front
 - ex: this is a dotted text.
 
 
-
+# Image Reference:
+to provide the image reference use the following format
+    ![Refer Here]{/images/1.jpg}
 
 
