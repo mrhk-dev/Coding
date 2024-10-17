@@ -73,3 +73,6 @@ To update the branch with the origin:
 2: merge changes with "git merge origin/<brnach_name>"
 Note to fetch and merge in single command:
 git pull origin <branch_name>
+
+
+

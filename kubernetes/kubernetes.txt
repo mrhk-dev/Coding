@@ -1,0 +1,2 @@
+What is kubernetes?
+Kubernetes an open-source container orchestration platform designed to automate the deployment, management, and scaling of containerized applications.

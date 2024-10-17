@@ -1,0 +1,311 @@
+What is Teraform?
+    Teraform is an open-source infrastructure as code (IaC) software tool created by HashiCorp. 
+    It allows users to define and provision infrastructure resources in a declarative configuration language called HashiCorp Configuration Language (HCL).
+    teraform makes sure to have the actual state based on desired state
+
+Why teraform?
+    teraform is a popular infrastructure as code (IaC) tool that provides several benefits for managing cloud and on-premises resources:
+
+* Multi-Cloud Compatibility
+  teraform supports over 100 providers including AWS, Azure, Google Cloud, Kubernetes, and more.
+    This allows managing infrastructure across multiple cloud providers using the same syntax
+  
+* Infrastructure as Code
+    teraform uses a declarative configuration language called HashiCorp Configuration Language (HCL) to define infrastructure resources in human-readable files that can be versioned, shared, and reused.
+
+* Automation and Efficiency
+    teraform handles the underlying logic when creating resources, eliminating the need for manual effort. 
+    It determines resource dependencies and can create or modify non-dependent resources in parallel, ensuring resources are provisioned properly and efficiently.
+
+* Collaboration and Consistency
+    teraform configuration files can be committed to version control systems, enabling collaboration and preventing unauthorized changes. 
+    Using modules, teams can define and share approved infrastructure patterns for consistency across environments
+    
+* Tracking and Visibility
+    teraform configuration files can be committed to version control systems, enabling collaboration and preventing unauthorized changes. 
+    Using modules, teams can define and share approved infrastructure patterns for consistency across environments
+
+* Flexibility and Portability
+    teraform's declarative syntax and modular architecture provide flexibility in configuration and deployment. 
+    The ability to manage resources across cloud and on-premises environments offers portability
+
+teraform vs OpenTofu:
+    teraform and OpenTofu are both infrastructure as code (IaC) tools designed for managing cloud resources, but they have distinct characteristics and licensing models that set them apart. 
+
+How teraform is different from cicd pipeline?
+    teraform and CI/CD (Continuous Integration/Continuous Deployment) pipelines serve different but complementary roles in the software development and infrastructure management lifecycle.
+    Here’s a detailed comparison highlighting their differences:
+        * teraform:
+            teraform is an infrastructure as code (IaC) tool that allows users to define and provision cloud infrastructure using a declarative configuration language (HCL). 
+            Its primary purpose is to automate the creation, modification, and management of infrastructure resources across various cloud providers.
+        * CI/CD Pipeline:
+            A CI/CD pipeline is a set of automated processes that allow for continuous integration of code changes and continuous deployment of applications. 
+            It focuses on automating the software delivery process, including building, testing, and deploying applications to various environments.
+
+What is Infra provisioning?
+    The process of creating infrastructure by experessing our infra needs in a declarative way and then executing the template to create infra sturcture(virtual).
+        ex: I want a linux vm with 2 cpus and 8gb ram
+
+What is infrastructure?
+    Infrastructure refers to the foundational components and resources that are necessary to run applications and services. 
+    This includes both low-level resources, such as servers and storage, and high-level components, such as networking configurations and DNS entries. 
+    teraform enables users to define, provision, and manage these resources through a declarative configuration language called HashiCorp Configuration Language (HCL).
+
+What is Procedural provisioning?
+	manually installing.
+
+Infrastructure as code:
+    Infrastructure as a code (IAC) is a concept where you express your infrasturcture in a declarative way.
+	    We need to express
+	    What we want to create/manage (Resource)
+	    Outputs	
+
+Teraform components:
+    Inputs:Arguments
+    Outputs:attributes
+    Providers: where to create
+    Resource: what to create
+
+What are teraform provider?
+
+How teraform works:
+    teraform can interact with specific providers (AWS, Azure, Vmware) to create/manage infrastructure 
+    Each Provider will have lots of resources which we can define to create infra.
+
+Executing teraform:
+    teraform --help
+    teraform init
+    teraform apply
+    teraform delete
+
+Template:
+    In teraform we need to express infrastucture in a declartive fashion and what we create is called as template.
+    teraform takes a folder as input considering all .tf files a folder
+
+teraform installation:
+
+
+teraform Workflow:
+    Create a new folder for every infra
+    we will be adding .tf files
+    initialize teraform
+    validate teraform
+    format teraform
+    apply
+    destroy    
+
+
+teraform commands:
+    teraform init:
+    teraform validate:
+    teraform fmt:
+    teraform aplly:
+
+
+Terraform Ways of Working:
+	Ensure you know how to manually create resources
+	List out all the resources and ensure you have creation order
+	For each resource, list all the inputs you are passing
+	For each resource you have created manually, find the equivelent terraform resource.
+
+Resource Blocks:
+Resources are the most important element in the Terraform language. 
+Each resource block describes one or more infrastructure objects, such as virtual networks, compute instances, or higher-level components such as DNS records.
+
+Resource Syntax:
+ex:
+	resource "aws_instance" "web" {
+  		ami           = "ami-a1b2c3d4"
+  		instance_type = "t2.micro"
+	}
+
+Using teraform Attributes:
+ex:
+	resource "aws_vpc" "base" {
+		cidr_block = var.vpc_config.cidr_block
+  		tags       = var.vpc_config.tags
+	}
+
+	resource "aws_subnet" "subnets" {
+  		count             = length(var.subnets_config)
+  		availability_zone = var.subnets_config[count.index].availability_zone
+  		vpc_id            = aws_vpc.base.id
+  		cidr_block        = var.subnets_config[count.index].cidr_block
+  		tags              = var.subnets_config[count.index].tags
+	}
+
+from the above example the resource aws_subnet ubnet is dependent on aws_vpc
+we defined its dependency in vpc_id
+here the awc_vpc is type and base is resource name and id is the variable
+
+We can also add the depends_on variable as well.
+ex: 
+	resource "aws_vpc" "base" {
+		cidr_block = var.vpc_config.cidr_block
+		tags       = var.vpc_config.tags
+	}
+
+	resource "aws_subnet" "subnets" {
+		count             = length(var.subnets_config)
+		availability_zone = var.subnets_config[count.index].availability_zone
+		vpc_id            = aws_vpc.base.id
+		cidr_block        = var.subnets_config[count.index].cidr_block
+		tags              = var.subnets_config[count.index].tags
+		depends_on = [
+			aws_vpc.base
+		]
+	}
+
+So in the above example vpc_id of vpc is the attribute
+
+In Azure we first create the resource then network then subnet.
+---------------------------------------------------------------------------------------
+
+Now we can create the variable template 
+We generally try to store all the variables in "variable.tf" or "inputs.tf"
+variable syntax:
+variable "<variable_name>" {
+    type =  string | number | bool | map | object | list
+    description = 
+    default = 
+}
+
+
+If we do not provide the default variable, it will then ask for the value.
+
+So we try to make the template generic.
+for this we use count for creating multiple subnets.
+
+variable.tf
+variable "aws_vpc_resource name"{
+	type = string
+	default = "aws_vpc"
+}
+main.tf
+ex: resource "aws_vpc_subnet" "subnet"{
+	count = 4
+	address_prefex = var.subnet[count.index] #this is just for example
+}
+
+
+use of object in variable
+ex:
+	variable "vpcinfo"{
+		type = object({
+			cidr_block = string
+			tag = map(string)
+		})
+		default = {
+			cidr_block = ""
+			tag = {
+				// provide required tags of choice
+			}
+		}
+	}
+
+
+Now how to pass these all the variable?
+option 1: teraform apply -var varname = "variable valiues" etc
+option 2: teraform apply -var-file = 'dev.tfvars'
+
+in option 2 we pass all the values of the variables in a file called dev.tfvar, we can change the file name accordingly
+
+----------------------------------------------------------------------------
+Teraform Functions:
+
+We can use terraform console to view the functions
+There are various builin functions.
+
+Now we can replace the count value with lenght(var.varname)
+
+----------------------------------------------------------------------------
+Aws Ntier Architucture:
+
+
+
+----------------------------------------------------------------------------
+Terraform conditions:
+
+Teraform local:
+to use the local conditions multiple time we can create a local file
+and pass the data inside the local block
+ex:
+	locals{
+		do_we_have_to_create = lenght(var.varname) > 0 ? 1 : 0
+	}
+
+refer with local.do_we...
+
+----------------------------------------------------------------------------
+Teraform state management:
+
+Terafrom has plan, which compares the difference in states.
+The state file will have all the information about the current resource state.
+You should never be editing this state file and shouldnt exit in the local system as well.
+
+
+----------------------------------------------------------------------------
+Teraform resource importing:
+
+If the resource was created manually, and now if we want to manage them in teraform how do we do that.
+First create the provider file with provider.tf
+then in main.tf write the following code:
+
+`terraform import aws_vpc.base "vpc_id"`
+the base is name that we are providing for managinf in teraform.
+The vpc_id is provided from the resource or the vpc created manually.
+
+then if it asks to create resource block with "aws_vpc" "base", then create it
+we can then reenter the above command of `terraform import aws_vpc.base "vpc_id"`
+then execute "terraform plan" this is to let the terraform know that these resources shouldnt be created.
+
+We can then execute the terraform state aws_vpc.base to show the current state of the resource.
+We can then validate the file with "terraform validate"
+Then execute "teraform plan", this should not show that it is going to create the resource.
+
+----------------------------------------------------------------------------
+Teraform Workspace:
+
+Workspaces are isolated environments within a single Terraform configuration that allow you to manage multiple instances of the same infrastructure. Each workspace has its own state file, enabling separate management of resources.
+We know that two developers can not write into the file due to lock mechanism for preventing crashes.
+But we want dev and qa to execute the file parallely.
+This can be done by creating two workspaces, meanning by creating the storage on the cloud and providing the storage path.
+As the most important file in terraform is state file, this keeps the record of the environment and all.
+Refer here for more info: https://developer.hashicorp.com/terraform/language/state/workspaces
+
+You can vew the current workspaces with "Terraform workspace list"
+But this will only work if the backend is selected.
+
+We can select the workspace with "Terraform workspace select workspace_name"
+----------------------------------------------------------------------------
+Terraform provisioning:
+
+
+=========================================================================================
+How Organisations use teraform:
+
+Terraform best practices:
+choose google terraform starnd module structure.
+
+organisation mostly uses teraform modules.
+
+Then after creating the ec3 instance if we want to install any softwares using scripts while creating ec2 we use null_resouce
+
+The null_resouce can be used to execute multiple scripts and also get them changed after ec2 is created.
+
+----------------------------------------------------------------------------
+Terrascan:
+
+This is used to scan for vunerabilities in the terraform 
+
+we only need to execute one cammand "terascan scan"
+
+
+
+
+
+===================================================================================================
+
+null_block for running bash commands:
+This is to make changes to the softwares if are provided at the time of infra building.
+
