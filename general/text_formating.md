@@ -2,7 +2,8 @@ This file is about the markdown text formating for **GitHub repos** file referen
 
 ---
    
-### Headings:
+
+<br><br>### Headings:
 
 There are 6 levels of headings, that can be used according to the necessary.
 # Headings
@@ -12,10 +13,10 @@ There are 6 levels of headings, that can be used according to the necessary.
 ##### Headings
 ###### Headings
    
-### Line Break
+<br><br>### Line Break
 Add 2 or more spaces for having line break.  
   
-### Paragraphs:  
+<br><br>### Paragraphs:  
 Don't put tabs or spaces at the begning of the new line.  
 Keep the paragraphs left aligned.  
   
@@ -50,7 +51,7 @@ Add - to have Dot at the front
 Provide the image reference with the following format:
 *** ![Refer Here](./images/10.jpg) ***
 - for decreasing the image size use the below code:
-<img src="./images/1.jpg" width="200" height="100">
+<img src="./images/1.jpg" width="200" height="200">
   
 ### Code Blocks:
 Add 8 spaces or 2 tabs for code indentation.
