@@ -105,4 +105,7 @@ After writing the file
 Docker commands:
 docker exec -it <container_name_or_id> /bin/bash      to enter the docker container ubuntu bash
 
+start dockeer:
+docker start image_name
+
 
