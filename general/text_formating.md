@@ -1,5 +1,6 @@
 This file is about the markdown text formating for **GitHub repos** file references.   
-**---**
+
+---
    
 ### Headings:
 
@@ -31,7 +32,7 @@ To make the text bold we can use ** or __
 To make the text italic we can use *.  
 > ex: this is an *italic search*.  
     
-#### both bold and italic:  
+#### Both bold and italic:  
 This is the example of both ***bold and italic***.   
   
 ### BlockQuotes:
