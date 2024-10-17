@@ -1,5 +1,5 @@
 This file is about the markdown text formating for **GitHub repos** file references.   
----
+**---**
    
 ### Headings:
 
