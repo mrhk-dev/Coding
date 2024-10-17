@@ -1,5 +1,6 @@
 This file is about the markdown text formating for **GitHub repos** file references.   
-
+---
+   
 ### Headings:
 
 There are 6 levels of headings, that can be used according to the necessary.
