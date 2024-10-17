@@ -68,7 +68,7 @@ Add - to have Dot at the front
 # Image Reference:
 Provide the image reference with the following format:
 *** ![Refer Here](./images/1.jpg) ***
-
+<img src="./images/1.jpg" width="200" height="100">
 
 # Code Blocks:
 Add 8 spaces or 2 tabs for code indentation.
@@ -79,6 +79,13 @@ Add 8 spaces or 2 tabs for code indentation.
 
 # Links:
 To add a link for the file add the following syntax   
-***(google.com)(https://google.com)***
+***[google.com](https://google.com)***  
+   
+  
+  
+# 
+
+
+
 
 
