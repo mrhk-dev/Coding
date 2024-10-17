@@ -77,4 +77,8 @@ Add 8 spaces or 2 tabs for code indentation.
 ---
 
 
+# Links:
+To add a link for the file add the following syntax
+[google.com](https://google.com)
+
 
