@@ -8,13 +8,15 @@ There are 6 levels of headings, that can be used according to the necessary.
 ##### Headings
 ###### Headings
    
-  
-  
+>
+>
+
 # Line Break
 Add 2 or more spaces for having line break.  
   
-  
-  
+>
+>
+
 # Paragraphs:  
 Don't put tabs or spaces at the begning of the new line.  
 Keep the paragraphs left aligned.  
@@ -64,7 +66,8 @@ Add - to have Dot at the front
 
 
 # Image Reference:
-to provide the image reference use the following format
-    ![Refer Here](./images/1.jpg)
+Provide the image reference with the following format:
+*** ![Refer Here](./images/1.jpg) ***
+
 
 
