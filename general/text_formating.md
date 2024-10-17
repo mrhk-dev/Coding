@@ -33,4 +33,6 @@ This is the example of both ***bold and italic***.
 
 # BlockQuotes:
 Add > character to add blockquotes.
+> ex: this is a blockquote.
+
 
