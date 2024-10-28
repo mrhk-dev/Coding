@@ -16,9 +16,20 @@ Docker can be used to create and manage containers, it lacks several features th
         Kubernetes continuously monitors the health of containers and can automatically restart or replace unhealthy instances. 
         Docker does not have this capability natively.
 
+Kubernetes Architecture:
+K8s is a Distributed system architucture.
+It's a master and worker type
 
+Master Node:
+    * API Server (We communicate with api server)
+    * etcd (executable directory/ database)
+    * Controller manager()
+    * Scheduler (Responsible for creating new work loads)
 
-
+Node / Worker Node
+     * Kubelet(is an agent that is responsible for executing commands sent from scheduler)
+     * Container runtime(responsible for creating the container)
+     * kube-proxy (responsible for network)
 
 
 
