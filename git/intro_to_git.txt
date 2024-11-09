@@ -1,3 +1,0 @@
-This repo is only for introduction to git commands.
-There will only be git commands and its purpose.
-The content is mostly for the Ubuntu.
