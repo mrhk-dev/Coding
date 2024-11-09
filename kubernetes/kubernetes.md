@@ -29,6 +29,7 @@ Kubernetes Architecture:
 K8s is a Distributed system architucture.
 It's a master and worker type
 
+![Kubernetes Architecture](./images/Kubernetes 1.webp)
 Master Node:
     * API Server (We communicate with api server)
     * etcd (executable directory/ database)
@@ -39,4 +40,24 @@ Node / Worker Node
      * Kubelet(is an agent that is responsible for executing commands sent from scheduler)
      * Container runtime(responsible for creating the container)
      * kube-proxy (responsible for network)
+
+
+Ways to handle Containers in Kubernetes
+
+
+Kubernetes Workload:
+	What all we can do in Kubernetes.
+
+
+
+## Pod
+A pod is the smallest unit of computing that can be deployed and managed in Kubernetes.
+A pod has one or more container in it.
+Every pod gets its own ipAddress.
+
+
+
+
+
+
 
