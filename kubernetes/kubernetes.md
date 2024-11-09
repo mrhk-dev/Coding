@@ -29,7 +29,10 @@ Kubernetes Architecture:
 K8s is a Distributed system architucture.
 It's a master and worker type
 
-![Kubernetes Architecture](./images/Kubernetes 1.webp)
+![Kubernetes Architecture](./images/Kubernetes 1.webp)  
+<img src="./images/Kubernetes 1.webp" width="200" height="200">  
+
+</br>
 Master Node:
     * API Server (We communicate with api server)
     * etcd (executable directory/ database)
