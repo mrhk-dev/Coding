@@ -29,7 +29,7 @@ Kubernetes Architecture:
 K8s is a Distributed system architucture.
 It's a master and worker type
 
-![Kubernetes Architecture](./images/Kubernetes 1.webp)  
+![Kubernetes Architecture](../images/Kubernetes_1.webp)  
 <img src="../images/kubernetes_1.webp" height="200">  
 
 </br>
@@ -57,6 +57,54 @@ Kubernetes Workload:
 A pod is the smallest unit of computing that can be deployed and managed in Kubernetes.
 A pod has one or more container in it.
 Every pod gets its own ipAddress.
+
+
+K8s setup
+
+CRI - container runtime interface
+CNI
+CSI 
+  
+## Manual Steps for understanding k8s working  
+- First we need to have 1 system for Master and others for Nodes (Pods)  
+1. Install docker in all machines.
+2. install cri-dockerd in master machine.
+	* CRI-Dockerd serves as an open-source adapter that allows Docker Engine to interface with Kubernetes through the Container Runtime Interface (CRI).
+	* [CRI-dockerd releases page](https://github.com/Mirantis/cri-dockerd/releases)
+3. We now install kubeadm, kubectl and kubelet on all nodes
+4. 
+
+
+
+
+Kubernetes Major workloads:
+* Pod
+	* Pods will have containers
+* Controllers:
+	
+
+K8s Manifest:
+Writing a pod file in yaml:
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+spec:
+  Container:
+    - image: nginx:1.27 
+
+We execute this above manifest with **"kubectl apply -f filename"**
+We can run **"kubectl get pods"**
+**kubectl get pods  -o wide** to view more information about the pods.
+
+
+For all the resources we use **kubectl api-resources**
+
+**kubectl exec podname -- printenv**  to display the environment variables 
+**kubectl exec podname -- /bin/sh** tp execute commands inside the container.
+
 
 
 
