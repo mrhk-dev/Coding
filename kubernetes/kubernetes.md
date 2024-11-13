@@ -185,11 +185,34 @@ Access modes:
 Kubernetes Client:
 Lens.
 
+Scheduling Pods and Nodes:
+* nodeSelector: 
+  	env: dev 
+* Node Affinity and Anti-Affinity
+* Pod Affinity and Anti-Affinity
+* Taints and tolerations
+* Resource Requests and limits
+* Priority and Preemption
+
+## Manifests  
+* Helm: This is a package manager for kubernetes to make the manifest upgradable.
+
+Ingress and Ingress Controller:
+	* We need to install ingress inside the kubernetes
+	* Then we can start using ingress inside the kubernetes.
 
 
+Authentication and Authorization:
 
+AutoScalling: 
+	* Horzontal Pod Autoscalling
+	* Vertical Pod Autoscalling
+	* Node Autoscalling (Managed k8s Clusters)
 
+CRD (Custom Resource Definiions) & Operators
 
+Helm:
+	* For making the manifest file dynamic we use Helm.
 
 
 
