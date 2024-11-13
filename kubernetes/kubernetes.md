@@ -104,6 +104,106 @@ For all the resources we use **kubectl api-resources**
 
 **kubectl exec podname -- printenv**  to display the environment variables 
 **kubectl exec podname -- /bin/sh** tp execute commands inside the container.
+**kubectk exec -c containerName podname -- printenv** to print the env variables of specified pod
+
+## Adding labels
+we provide labels in meta data.
+ex: 
+metadata:
+  label:
+    env: dev
+    release: 3.4
+
+for viewing these lables we can execute command **"kubectl get po --show-labels"** 
+
+to get all the pods with env dev
+	* kubectl get po -l env=dev
+
+## ReplicaSets
+* 
+
+
+
+## Service
+Service is a k8s object that creates virtual Ip-address and DNS Name is fixed. 
+It requires KubeProxy and core DNS.
+Types: 
+	Cluster IP
+	NodePort
+	Load Balancer
+	ExternalName
+
+## Managed Kubernetes Cluster:
+* Cloud providers offer manage Kubernetes cluster.
+* 
+
+## Config Maps:
+* If we want to pass the key value pair data to pods that is inSensitive we use **ConfigMaps**.
+For this we create a new **yaml file** and then refer the file in file in which we need value
+The value of the config map cannot be changed.
+
+
+HelthCheck for application:
+Liveness Probe
+Readness Peobe
+startup Probe
+
+Deployement:
+* ConfigMaps
+* Secrets
+
+Demonsets: A DaemonSet is a specialized Kubernetes resource designed to ensure that a specific Pod runs on all or a selected subset of nodes within a cluster. 
+This functionality is particularly useful for deploying background services that need to operate across the entire cluster, such as logging agents, monitoring tools, and network proxies.
+
+	Uses:	Logging and Monitoring:
+		Cluster Storage Management:
+		Network Services:
+
+Jobs: 
+* A Kubernetes Job is a resource designed to manage the execution of short-lived tasks within a Kubernetes cluster.
+* It ensures that a specified number of Pods successfully complete their tasks before the Job itself is considered complete. 
+* This functionality is particularly useful for running batch processes, data processing, and other one-time tasks that do not require continuous operation.
+
+CronJobs:
+
+NameSpace:
+In Kubernetes, a namespace is a mechanism for isolating groups of resources within a single cluster. 
+It allows for the logical organization and management of resources, making it easier to handle multiple projects or teams that share the same cluster. 
+
+
+Persistent Volumes: refer 25-11-24
+Persistent Volumes (PVs) are a crucial component of Kubernetes, designed to provide durable storage for containerized applications. 
+Unlike regular volumes that are tied to the lifecycle of a pod, PVs exist independently and retain data even when pods are terminated or restarted. 
+This capability is essential for stateful applications, such as databases, where data consistency and persistence are critical.
+
+Modes in PV:
+Retain, Delete, Recycle
+
+Access modes:
+4 modes.
+
+Kubernetes Client:
+Lens.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
