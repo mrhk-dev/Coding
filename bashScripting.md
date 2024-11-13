@@ -54,4 +54,26 @@ read -a variable_name
 How to print 1st element of the array?
 echo ${variable_name[0]}
 
+## Arguments
+How to Pass Arguments to Script?
+./filename.sh arg1 arg2 arg3 ...
 
+How to print or store the arguments?
+"name = $1" # $1 has the value of 1st argument passed while executing the script
+	* ex: echo 'Hello ' $1 $2 ...
+	./Hello.sh Rahmath Hussain
+
+How to print no of arguments passed?
+echo $#
+
+How to take all the Arguments as an array?
+args = ("$@")
+	echo ${args[1]} #this prints the 1st arg
+
+	
+## Conditions
+### if syntax
+if [ condition ]
+then 
+	statement
+fi
