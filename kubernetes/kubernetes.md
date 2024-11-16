@@ -214,6 +214,12 @@ CRD (Custom Resource Definiions) & Operators
 Helm:
 	* For making the manifest file dynamic we use Helm.
 
+<br><br>
+### Application Oberservability:  
+* Logs  
+* Metrics  
+* Traces  
+
 
 
 
