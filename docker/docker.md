@@ -116,6 +116,7 @@ After downloading it runs in a container
 ### What are nameSpace in Docker?
 * Docker namespaces are a fundamental feature of the Docker architecture that provides isolation for containerized applications. 
 * They allow each container to operate in its own environment, ensuring that processes running inside one container do not interfere with those in another or with the host system.
+* NameSpace is a Linux Kernel feature.
 * Here’s a detailed overview of the different types of namespaces used in Docker:
 * #### Types of Docker Namespaces
 * #### PID Namespace:
@@ -138,6 +139,7 @@ After downloading it runs in a container
 * Isolates user and group IDs, allowing containers to run with different user privileges than those on the host system. 
 * This enhances security by preventing processes in a container from having root privileges on the host.
 
+<img src="./images/docker1.jpg" width="200" height="200">
 
 ### Containerazation:
 * Containerization is a modern software deployment method that packages an application along with all its necessary components such as libraries, dependencies, and configuration files into a single, lightweight unit known as a container.
