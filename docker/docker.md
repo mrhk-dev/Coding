@@ -1,16 +1,16 @@
-What is Docker?
-	Docker is an open-source platform that enables developers to build, share, and run applications in lightweight, portable environments known as containers.
-	It has become a fundamental tool in modern software development, particularly for microservices architecture and DevOps practices.
+## What is Docker?
+* Docker is an open-source platform that enables developers to build, share, and run applications in lightweight, portable environments known as containers.
+* It has become a fundamental tool in modern software development, particularly for microservices architecture and DevOps practices.
 
-Key features of Docker:
-	Containerization: Docker packages applications and their dependencies into containers, which are isolated from the host system.
-		This allows applications to run consistently across various environments, such as development, testing, and production, without compatibility issues.
-	Efficiency: Containers share the host operating system's kernel, making them more lightweight compared to traditional virtual machines (VMs). 
-		This results in faster startup times and better resource utilization, allowing multiple containers to run on a single server
-	Portability: Docker containers can run on any system that has the Docker Engine installed, whether it's on-premises servers or cloud environments. 
-		This portability simplifies deployment and scaling of applications.
-	Development Workflow: Docker enhances the development lifecycle by enabling continuous integration and continuous delivery (CI/CD) practices. 
-		Developers can create a containerized application locally, test it, and then deploy it to production with minimal changes.
+### Key features of Docker:
+* Containerization: Docker packages applications and their dependencies into containers isolated from the host system.
+* This allows applications to run consistently across various environments, such as development, testing, and production, without compatibility issues.
+* Efficiency: Containers share the host operating system's kernel, making them more lightweight compared to traditional virtual machines (VMs). 
+* This results in faster startup times and better resource utilization, allowing multiple containers to run on a single server
+* Portability: Docker containers can run on any system with the Docker Engine installed, whether on-premises servers or cloud environments. 
+* This portability simplifies the deployment and scaling of applications.
+* Development Workflow: Docker enhances the development lifecycle by enabling continuous integration and delivery (CI/CD) practices. 
+* Developers can create a containerized application locally, test it, and then deploy it to production with minimal changes.
 
 Components of Docker:
 	Docker Engine: The core component that runs and manages containers. It consists of:
@@ -27,13 +27,13 @@ What is a container in Docker?
 	They are created from Docker images, which serve as the blueprint containing the application code and all necessary dependencies, libraries, and settings required for execution.	
 
 How Docker works:
-	we provide the commands from docker cli(docker clinet)
+	we provide the commands from docker cli(docker client)
 	the command is then sent to the docker demon
-	the docker demon checks if the image is available in docker repo
-	if avilable then it runs else it downloads from the docker Registry.
-	after downloading it runs in container
+	the docker demon checks if the image is available in the docker repo
+	if available then it runs else it downloads from the docker Registry.
+	after downloading it runs in a container
 
-============================================================================
+
 Docker commands:
 
 check if the docker is installed:
@@ -108,4 +108,8 @@ docker exec -it <container_name_or_id> /bin/bash      to enter the docker contai
 start dockeer:
 docker start image_name
 
+## View all images available in docker
+* docker images
+
+run 
 
