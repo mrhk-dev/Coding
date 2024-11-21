@@ -303,6 +303,43 @@ docker volume inspect: Display detailed information about a specific volume.
 docker volume inspect <volume_name>
 ```
 
+## Docker Yaml File
+A Dockerfile is a text document that contains a series of instructions for building a Docker image.   
+It serves as a blueprint for creating containers, which are lightweight, portable, and self-sufficient units that package an application and its dependencies.   
+
+### The Dockerfile supports the following instructions:
+[Docker file Steps](https://docs.docker.com/reference/dockerfile/)
+### DockerHub for finding the base images 
+[DockerHub](https://hub.docker.com)
+```
+# this is a comment, first leter with # with space is a comment
+``` 
+
+* FROM	create a new build stage from a base image.
+> ex: FROM python:3.14.0a2-bookworm
+> this downloads python with specified version
+
+* RUN this is used to provide the commands 
+> ex: apk add curl
+> this is used to download the curl in linux
+
+* WORKDIR this is used to specify the folder to initiate further usage.
+> ex: /downloads/
+> this sets the downloads as opened folder
+
+SHELL specify the shell like pwsh, bash, cmd etc
+
+USER 
+* LABEL	Add metadata to an image.
+
+COPY copy the files from host to container.
+
+ADD to download the file from internet and add it to container
+
+EXPOSE expose the port specified
+> EXPOSE 5000
+
+
 
 
 
