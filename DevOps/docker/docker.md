@@ -19,6 +19,7 @@
 
 
 ## Components of Docker:
+
 #### Docker Engine: 
 * The core component that runs and manages containers. It consists of:
 #### Docker Daemon (dockerd): 
@@ -39,26 +40,28 @@
 * They are created from Docker images, which serve as the blueprint containing the application code and all necessary dependencies, libraries, and settings required for execution.	
 
 ## How Docker works:
+<img src="./images/docker1.jpg" width="300" height="200">
+<br>
 
 1. ## Core Components
 #### Docker Engine: 
 * The core component responsible for creating and managing containers. 
 * It operates as a client-server application with three main parts:
-* #### Docker Daemon (dockerd): 
+#### Docker Daemon (dockerd): 
 * * Runs as a background service and manages Docker containers, images, networks, and volumes.
-* #### Docker Client: 
+#### Docker Client: 
 * * The command-line interface (CLI) that users interact with to issue commands to the Docker daemon.
-* #### REST API: 
+#### REST API: 
 * * Allows communication between the client and daemon, enabling remote management of containers.
 
 2. ## Containerization Process
-* #### Docker Images: 
+#### Docker Images: 
 * Read-only templates used to create containers. 
 * Each image consists of multiple layers, built on top of a base image, containing all necessary dependencies for the application.
-* #### Docker Containers: 
+#### Docker Containers: 
 * Instances of Docker images that run as isolated processes on the host operating system. 
 * Containers share the OS kernel but maintain their own filesystem and environment.
-* #### Docker Registries: 
+#### Docker Registries: 
 * Repositories for storing and distributing Docker images. 
 * The default public registry is Docker Hub.
 
@@ -139,7 +142,7 @@ After downloading it runs in a container
 * Isolates user and group IDs, allowing containers to run with different user privileges than those on the host system. 
 * This enhances security by preventing processes in a container from having root privileges on the host.
 
-<img src="./images/docker1.jpg" width="200" height="200">
+<img src="./images/docker1.jpg" width="300" height="200">
 
 ### Containerazation:
 * Containerization is a modern software deployment method that packages an application along with all its necessary components such as libraries, dependencies, and configuration files into a single, lightweight unit known as a container.
@@ -343,4 +346,4 @@ EXPOSE expose the port specified
 
 
 
-
+### docker run -it ubuntu:22.04 /bin/bash : run a container in exetution mode

@@ -85,7 +85,7 @@ Pod Security Policies: Enforce policies that define security contexts for pods, 
 8. Security Practices
 
 
-### K8s setup
+### K8s Interfaces
 CRI - container runtime interface  
 CNI - container network interface  
 CSI - container storage interface  
@@ -279,3 +279,4 @@ Lens.
 * Metrics  
 * Traces  
 
+## Installing K8s on local machine
