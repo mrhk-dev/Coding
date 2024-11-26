@@ -23,7 +23,7 @@ Docker can be used to create and manage containers, but it lacks several feature
 ### Kubernetes Architecture:
 Kubernetes architecture is designed to manage containerized applications across a distributed system, consisting of a control plane and worker nodes.  
 
-<img src="./images/kubernetes_1.webp" height="200">  
+<img src="./images/kubernetes1.jpg" height="200">  
 
 * #### Master Node:  
     * API Server (User communicates with API server)
