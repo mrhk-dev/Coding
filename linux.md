@@ -119,3 +119,34 @@ chmod 770 filename  # Sets read, write, execute for owner and group; no permissi
 
 #### su - username: change user 
 
+
+## Enable SSH connection:
+#### Install OpenSSH Server:
+```bash 
+sudo apt install openssh-server -y
+```
+
+#### Check SSH Status:
+```bash
+sudo systemctl status ssh
+```
+
+#### Allow SSH Through Firewall (if applicable):
+```bash
+sudo ufw allow ssh
+```
+
+#### Find Your IP Address:
+```bash
+ip a
+```
+
+#### Connect via SSH:
+```bash
+ssh username@ip_address
+```
+
+
+
+
+

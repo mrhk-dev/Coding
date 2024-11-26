@@ -1,5 +1,4 @@
 1. How does Docker differ from traditional virtualization technologies like VMware or VirtualBox?
-Answer:
 
 Docker and traditional virtualization technologies like VMware or VirtualBox differ in their approach to isolation. 
 

@@ -280,3 +280,76 @@ Lens.
 * Traces  
 
 ## Installing K8s on local machine
+
+#### prerequisites:
+* Install Docker
+
+* We will install KubeAdm for kubernetes 
+  * We install it on Ubuntu 22.04
+
+#### Script to install docker
+chmod +x script-name to add execution permision to the script
+```bash
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+sudo systemctl status docker
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+docker run hello-world
+```
+
+> #### Instructions for installing kubeadm 
+
+
+#### Install docker-cri on all nodes and master
+[For Cri-dockerD ](https://github.com/Mirantis/cri-dockerd/releases)
+
+```bash
+cd /tmp
+wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.15/cri-dockerd_0.3.15.3-0.ubuntu-jammy_amd64.deb
+sudo dpkg -i cri-dockerd_0.3.15.3-0.ubuntu-jammy_amd64.deb
+```
+
+#### Install kubeadm
+But first Open Ports for KubeAdm Control Plane
+```bash
+sudo ufw allow 6443/tcp
+sudo ufw allow 2379/tcp
+sudo ufw allow 2380/tcp
+sudo ufw allow 10250/tcp
+sudo ufw allow 10251/tcp
+sudo ufw allow 10252/tcp
+sudo ufw allow 179/tcp
+```
+```bash
+sudo apt-get update
+# apt-transport-https may be a dummy package; if so, you can skip that package
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+sudo systemctl enable --now kubelet
+```
+
+#### Now Install a plugin for Pod-Networking
+* Flannel
+
+```bash
+`--ignore-preflight-errors=...`
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --cri-socket "unix:///var/run/cri-dockerd.sock"
+```
+
+
+#### Now Initialize the CLuster in master node

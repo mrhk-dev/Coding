@@ -77,3 +77,9 @@ if [ condition ]
 then 
 	statement
 fi
+
+
+## Running script
+./script.sh 
+
+Enabling Openssh
